@@ -32,14 +32,23 @@ program
 program
     .command('add <schematics-name>')
     .description('add a schematic powered by icb-cli-service')
-    .option('-p, --preset <presetName>', 'Skip prompts and use saved or remote preset')
     .action((name, cmd) => {
         const options = cleanArgs(cmd)
         if(minimist(process.argv.slice(3))._.length > 1){
-            log(chalk.yellow('\n Info: You provided more than one argument. The first one will be used as the app\'s name, the rest are ignored.'))
+            log(chalk.yellow('\n Info: You provided more than one argument. The first one will be used as the schematic, the rest are ignored.'))
         }
         require('../lib/add')(name,options)
     })
+program
+    .command('remove <schematics-name>')
+    .description('remove a schematic powered by icb-cli-service')
+    .action((name, cmd) => {
+        const options = cleanArgs(cmd)
+        if(minimist(process.argv.slice(3))._.length > 1){
+            log(chalk.yellow('\n Info: You provided more than one argument. The first one will be used as the schematic, the rest are ignored.'))
+        }
+        require('../lib/remove')(name,options)
+    })    
 program
     .command('run <name>')
     .description('run a command for schematic command')
