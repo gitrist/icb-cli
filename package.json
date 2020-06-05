@@ -1,0 +1,36 @@
+{
+  "name": "icb-cli",
+  "version": "1.0.0",
+  "description": "icb-cli",
+  "main": "index.js",
+  "bin": {
+    "rist-cli": "icb.js"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "dependencies": {
+    "@rist/cli-shared-utils": "^1.0.5",
+    "commander": "^2.20.0",
+    "fs-extra": "^7.0.1",
+    "inquirer": "^7.1.0",
+    "minimist": "^1.2.0",
+    "slash": "^3.0.0",
+    "validate-npm-package-name": "^3.0.0"
+  },
+  "keywords": [
+    "icb",
+    "cli"
+  ],
+  "author": "",
+  "license": "ISC",
+  "engines": {
+    "node": ">=8.9"
+  },
+  "repository": {
+    "type": "github",
+    "url": "https://github.com/gitrist/icb-cli.git",
+    "directory": "@icb/cli"
+  },
+  "release-pkg":"package"
+}
