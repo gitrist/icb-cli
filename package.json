@@ -1,10 +1,10 @@
 {
   "name": "icb-cli",
-  "version": "1.0.0",
+  "version": "1.0.4",
   "description": "icb-cli",
   "main": "index.js",
   "bin": {
-    "rist-cli": "icb.js"
+    "icb": "bin/icb.js"
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"

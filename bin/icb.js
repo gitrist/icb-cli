@@ -1,3 +1,5 @@
+#!/usr/bin/env node
+
 const {chalk,semver,log,error} = require('@rist/cli-shared-utils');
 const requireVersion = require('../package.json').engines.node;
 
