@@ -21,10 +21,14 @@ icb remove [name]
 ```
 ### 运行schema命令
 ```
-icb run -c [schema] [command]
+icb run -- [schema] [command]
 ```
 #### 例如
 ```
 icb add @vue/cli
-icb run -c vue create test
+icb run -- vue create test
+```
+### 查看已添加的schema包
+```
+icb package ls
 ```

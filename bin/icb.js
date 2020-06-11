@@ -41,6 +41,7 @@ program
         }
         require('../lib/add')(name,options)
     })
+
 program
     .command('remove <schematics-name>')
     .description('remove a schematic powered by icb-cli-service')
@@ -50,11 +51,23 @@ program
             log(chalk.yellow('\n Info: You provided more than one argument. The first one will be used as the schematic, the rest are ignored.'))
         }
         require('../lib/remove')(name,options)
-    })    
+    })
+
 program
-    .command('run <name>')
+    .command('package [options]')
+    .description('Show the package list information for user')
+    .option('ls, list', 'list infomations')
+    .action((name, cmd) => {
+        const options = cleanArgs(cmd)
+        if(minimist(process.argv.slice(3))._.length > 1){
+            log(chalk.yellow('\n Info: You provided more than one argument. The first one will be used as the schematic, the rest are ignored.'))
+        }
+        require('../lib/info')(name,options)
+    })      
+
+program
+    .command('run <schematic> [schematic-options]')
     .description('run a command for schematic command')
-    .option('-c, --command <commandName> [SchematicOptions]', 'Schematic command')
     .action((name, cmd) => {
         require('../lib/run')(minimist(process.argv.slice(3)))
     })
@@ -65,6 +78,7 @@ program.on('--help', () => {
     console.log(`  Run ${chalk.cyan(`icb-cli <command> --help`)} for detailed usage of given command.`)
     console.log()
 })
+
 program.parse(process.argv)
 
 function camelize(str){

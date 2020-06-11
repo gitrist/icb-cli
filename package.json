@@ -1,6 +1,6 @@
 {
   "name": "icb-cli",
-  "version": "1.0.4",
+  "version": "1.0.5",
   "description": "icb-cli",
   "main": "index.js",
   "bin": {
